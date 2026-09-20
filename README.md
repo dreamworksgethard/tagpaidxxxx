@@ -1,18 +1,25 @@
-# Tag Paid static site
+# Tag Paid — static site (upload this whole folder)
 
-This folder is a static build (HTML, CSS, JS) for GitHub Pages.
+This folder is the live website: HTML, CSS, JS.
+
+## Fix for broken styles on GitHub Pages
+
+Upload **everything** in this folder, including:
+
+- `next/` (CSS + JS — required)
+- `.nojekyll` (required for GitHub Pages)
+- `index.html`, `logo.png`, etc.
+
+If you only upload `index.html`, the site will look broken (no CSS).
 
 ## GitHub Pages setup
 
-1. Repo **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: `main` (or `master`), folder: **/docs**
-4. Save
+1. Put these files in your repo `docs/` folder (or set Pages root to this folder)
+2. Settings → Pages → Deploy from a branch → **/docs**
+3. Custom domain: `tagpaid.app`
 
-If the site is at `https://USERNAME.github.io/REPO/`, rebuild with:
+Rebuild locally:
 
 ```bash
-NEXT_BASE_PATH=/REPO npm run build:static
+npm run build:static
 ```
-
-Then commit and push the updated `docs/` folder.
